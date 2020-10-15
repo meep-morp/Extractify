@@ -2,7 +2,7 @@ const initialState = {
 	pdfList: [],
 };
 
-const pdfReducer = (state = initialState, action) => {
+export const pdfReducer = (state = initialState, action) => {
 	switch (action.type) {
 		default:
 			return state;

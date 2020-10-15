@@ -2,31 +2,49 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
-// REDUX
+// REDUX ------------
 import { createStore, applyMiddleware, compose } from "redux";
-import pdfReducer from "./store/reducers/pdfReducer";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { reduxFirestore, getFirestore } from "redux-firestore";
-import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
+import {
+	createFirestoreInstance,
+	reduxFirestore,
+	getFirestore,
+} from "redux-firestore";
+import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
+import { pdfReducer } from "./store/reducers/pdfReducer";
 
-// FIREBASE
-import fbConfig from "./config/firebase";
+// FIREBASE ---------
+import firebase from "firebase/app";
+import firebaseConfig from "./config/firebase";
 
 const store = createStore(
 	pdfReducer,
 	compose(
-		// Allows an extra argument to be used inside of actions
-		applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-		// Redux bindings for FireStore
-		reactReduxFirebase(fbConfig),
-		reduxFirestore(fbConfig)
+		applyMiddleware(thunk.withExtraArgument({ getFirestore, getFirebase })),
+		reduxFirestore(firebase, firebaseConfig)
 	)
 );
 
+// CONFIG
+
+const rrfConfig = {
+	userProfile: "users",
+	useFirestoreForProfile: true,
+};
+
+const rrfProps = {
+	firebase,
+	config: rrfConfig,
+	dispatch: store.dispatch,
+	createFirestoreInstance,
+};
+
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<ReactReduxFirebaseProvider {...rrfProps}>
+			<App />
+		</ReactReduxFirebaseProvider>
 	</Provider>,
 	document.getElementById("root")
 );
