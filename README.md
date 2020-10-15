@@ -9,3 +9,12 @@ The following environment variables are needed to run:
 - REACT_APP_FIREBASE_SENDER_ID
 - REACT_APP_MESSAGING_APP_ID
 - REACT_APP_MEASUREMENT_ID
+
+## Dependencies 
+- firebase 
+- redux 
+- react-redux 
+- react-redux-firebase 
+- redux-thunk 
+- redux-firestore
+- any-text
