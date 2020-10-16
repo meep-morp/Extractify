@@ -17,7 +17,7 @@ const AddPDFForm = props => {
 			setError("");
 		} else {
 			setFile(null);
-			setError("Please select an image file (png or jpg)");
+			setError("Please select a PDF file");
 		}
 		setLoading(true);
 	};

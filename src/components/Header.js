@@ -1,12 +1,11 @@
 import React from "react";
 
-const headerStyle = {
-    fontSize: "4rem",
-}
-
 const Header = props => {
     return (
-        <h1 style={headerStyle}>Extractify</h1>
+        <>
+            <h1>Extractify</h1>
+            <p className="sub">Pdf to Text</p>
+        </>
     )
 }
 
