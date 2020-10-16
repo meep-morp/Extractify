@@ -24,7 +24,7 @@ const AddPDFForm = props => {
 
 	return (
 		<form>
-			{loading ? (
+			{file && loading ? (
 				<Converter file={file} setFile={setFile} setLoading={setLoading} />
 			) : (
 				<label>
