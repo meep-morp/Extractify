@@ -10,11 +10,14 @@ The following environment variables are needed to run:
 - REACT_APP_MESSAGING_APP_ID
 - REACT_APP_MEASUREMENT_ID
 
-## Dependencies 
-- firebase 
-- redux 
-- react-redux 
-- react-redux-firebase 
-- redux-thunk 
-- redux-firestore
-- any-text
+<br>
+
+| Dependencies        |                                                                     |
+|---------------------|---------------------------------------------------------------------|
+| firebase            | Backend                                                             |
+| crawler             | Gather text from a URL                                              |
+| body-parser         | Request Body Middleware                                             |
+| qs                  | QueryString Parser                                                  |
+| antd                | Design Framework                                                    |
+| firebase functions  | Endpoints for Firebase                                              |
+| uuid                | Unique ID generator for keeping track of a person's browser         |
