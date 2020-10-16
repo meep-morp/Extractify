@@ -1,5 +1,7 @@
 # Extractify
 
+[Deployed Site](https://extractify.vercel.app/)
+
 <br>
 
 | Dependencies        |                                                                     |
