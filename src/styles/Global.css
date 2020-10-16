@@ -53,3 +53,52 @@ label:hover{
 .error{
   color: var(--error);
 }
+
+.grid {
+  display:flex;
+  flex-wrap: wrap;
+  width :100%;
+}
+
+.display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display {
+  overflow: scroll;
+  height: 400px;
+  width: 370px;
+  margin: 40px;
+  margin-top: 10px;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+}
+
+.display::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+.display::-webkit-scrollbar-track {
+  background: rgb(232, 232, 232);        /* color of the tracking area */
+}
+.display::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 20px;  
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
