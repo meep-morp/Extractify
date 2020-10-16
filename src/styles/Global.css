@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&family=Signika&display=swap');
+
+:root{
+  --primary: #40c6f7;
+  --secondary: #fcfd8d;
+  --error: #ee6565;
+}
+
+* {
+    font-family: 'Overpass', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Signika', sans-serif;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+  margin: 30px auto 10px;
+  text-align: center;
+}
+label input{
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+label{
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  margin: 10px auto;
+  line-height: 67px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 50px;
+}
+label:hover{
+  background: var(--primary);
+  color: white;
+  transition: 0.3s ease;
+}
+.output{
+  height: 60px;
+  font-size: 0.8rem;
+}
+.error{
+  color: var(--error);
+}
