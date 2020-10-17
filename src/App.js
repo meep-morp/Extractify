@@ -3,6 +3,7 @@ import "antd/dist/antd.css";
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import AddPDFForm from "./components/AddPDFForm";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import PDFGrid from "./components/PDFGrid";
 import { useCollection } from "./hooks/useCollection";
@@ -25,7 +26,15 @@ function App() {
 		<div className="App">
 			<Header />
 			<AddPDFForm />
-			{loading ? <Spin size="large" /> : <PDFGrid list={collection} />}
+			{loading ? (
+				<div style={{ height: "40vh" }}>
+					{" "}
+					<Spin size="large" />{" "}
+				</div>
+			) : (
+				<PDFGrid list={collection} />
+			)}
+			<Footer />
 		</div>
 	);
 }

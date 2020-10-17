@@ -125,3 +125,51 @@ label:hover{
   justify-content: space-between;
   align-items: center;
 }
+
+footer {
+  display: flex;
+  bottom:0;
+  background: var(--primary);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+  font-size: 3rem;
+}
+
+.links a {
+  color: rgb(128, 242, 255);
+}
+
+.link{
+  cursor: pointer;
+}
+
+.link:hover{ 
+  color: white;
+  transition: 0.3s ease;
+}
+
+section h2, section h3{
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0 20px 0 10px;
+}
+
+section{ 
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content:center;
+}
