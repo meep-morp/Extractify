@@ -1,5 +1,5 @@
-import { Progress } from "antd";
-import React, { useEffect } from "react";
+import { Progress, Spin } from "antd";
+import React, { useEffect, useState } from "react";
 import { useStorage } from "../hooks/useStorage";
 
 const errorGradient = {
@@ -14,12 +14,12 @@ const normalGradient = {
 const Converter = ({ file, setFile, setLoading }) => {
 	const id = window.localStorage.getItem("extract-id");
 	const { progress, error } = useStorage(file, id);
+	const [receive, setReceiving] = useState(false);
 
 	useEffect(() => {
 		setTimeout(() => {
 			if (progress === 100) {
-				setLoading(false);
-				setFile(null);
+				setReceiving(true);
 			}
 		}, [1000]);
 	}, [progress, setFile, setLoading]);
@@ -27,14 +27,18 @@ const Converter = ({ file, setFile, setLoading }) => {
 	return (
 		<>
 			<div className="progress">
-				<Progress
-					status={error && "exception"}
-					style={{ margin: "20px 0", color: error ? "#ee6565" : "black" }}
-					type="circle"
-					percent={progress}
-					strokeColor={error ? errorGradient : normalGradient}
-					width={80}
-				/>
+				{receive ? (
+					<Spin size="large" />
+				) : (
+					<Progress
+						status={error && "exception"}
+						style={{ margin: "20px 0", color: error ? "#ee6565" : "black" }}
+						type="circle"
+						percent={progress}
+						strokeColor={error ? errorGradient : normalGradient}
+						width={80}
+					/>
+				)}
 			</div>
 			<div className="error">{error && error.message_}</div>
 		</>

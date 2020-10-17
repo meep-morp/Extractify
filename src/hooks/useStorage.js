@@ -41,7 +41,7 @@ export const useStorage = (file, id) => {
 						fireStore.collection(id).doc(file.name).set(fireData);
 						setTimeout(() => {
 							window.location.reload();
-						}, 1000);
+						}, 300);
 					})
 					.catch(err => {
 						console.log(err);
